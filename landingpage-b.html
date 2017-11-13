@@ -1,0 +1,61 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><title>landing page b</title><meta name="description" content="ModCampaignSiteDescription" /><meta name="keywords" content="" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link href="http://app.gr-cdn.com/images/squeeze-page/_external/various/favico.png" rel="shortcut icon" /><script type="text/javascript" src="http://emartinez12377_1.gr8.com/images/lps/js/lpc.js"></script><script type="text/javascript" src="http://emartinez12377_1.gr8.com/images/lps/js/jquery-3.1.0.min.js"></script><link rel="stylesheet" href="http://emartinez12377_1.gr8.com/images/lps/css/reset.css" /><link rel="stylesheet" href="http://emartinez12377_1.gr8.com/images/lps/css/core.css" /><link rel="stylesheet" href="http://emartinez12377_1.gr8.com/images/lps/css/webform.css" /><link rel="stylesheet" href="http://emartinez12377_1.gr8.com/images/common/templates/landing/237/1/css/style.css" /><style id="def-mark" type="text/css">section#section-apaaa [data-section="wrap"] { width: 980px; }
+section#section-apaaa { z-index: 2; }
+section#section-e1x9e [data-section="wrap"] { width: 980px; }
+section#section-e1x9e { z-index: 2; }
+section#section-mwxm9 [data-section="wrap"] { width: 980px; }
+section#section-mwxm9 { z-index: 2; }
+section#section-6j6xx [data-section="wrap"] { width: 980px; }
+section#section-6j6xx { z-index: 2; }
+div#edi-33mmu .text-content { color: rgb(250, 250, 250); font-size: 101px; font-family: Verdana, sans-serif; font-weight: bold; }
+div#edi-33mmu { visibility: visible; width: 642px; height: auto; top: 75px; left: 182px; transform-origin: 0px 0px 0px; z-index: 2; text-align: center; }
+section#section-8988u [data-section="wrap"] { width: 980px; }
+section#section-8988u { z-index: 2; }
+div#edi-ds3s3 img { width: 788px; height: 441px; top: 0px; left: 0px; }
+div#edi-ds3s3 { visibility: visible; width: 779px; height: 583.438px; top: 248.094px; left: 120px; transform-origin: 0px 0px 0px; z-index: 2; background: url("https://multimedia.getresponse.com/getresponse-hOuSj/photos/651439805.png?_ga=2.241148165.724213828.1510522147-1581663021.1510522147") 0px 0px / 788px no-repeat; }
+div#edi-5ood8 { width: 393px; height: 71px; top: 770px; left: 306px; background-color: rgb(255, 255, 255); z-index: 2; transform-origin: 0px 0px 0px; }
+section#section-6o666 [data-section="wrap"] { width: 980px; }
+section#section-6o666 { height: 1404px; background-color: rgb(36, 38, 53); background-image: none; background-repeat: repeat; background-position: 0% 0%; z-index: 2; background-size: auto; background-clip: border-box; background-origin: padding-box; }
+section#section-66j6x [data-section="wrap"] { width: 980px; }
+section#section-66j6x { z-index: 2; }</style><style id="def-mark-hover" type="text/css"></style><style id="def-mark-phone" type="text/css" media="only screen and (max-width: 600px)">[data-editable="text"] { text-align: center; }
+[hidden-on-phone="true"] { display: none; }</style><script type="text/javascript">
+                    (function () {
+                        APP.initialData = {
+                            tracking_code_id: '',
+                            tracking_code_type: '',
+                            google_adwords_id: '',
+                            google_adwords_conversion_label: ''
+                        };
+                    }());
+                </script></head><body><body xmlns="http://www.w3.org/1999/xhtml" marginwidth="0" marginheight="0" data-widget="arena" data-variant-id="100" id="body-ggg5j" data-uid="body-ggg5j" data-draggable="false" data-viewing-mode="desktop"><div hidden="true" id="OPT">
+        <form action="#" method="post">
+            <div>
+                <select name="GoogleWebFont">
+                    <option value="'Roboto', sans-serif;">Roboto:400,900:latin,vietnamese,latin-ext,cyrillic</option>
+                <option value="'Fredoka One', cursive">Fredoka+One:400,400italic,700,700italic:latin,latin-ext</option><option value="'Luckiest Guy', cursive">Luckiest+Guy:400,400italic,700,700italic:latin,latin-ext</option><option value="'Changa One', cursive">Changa+One:400,400italic,700,700italic:latin,latin-ext</option></select>
+            </div>
+        </form>
+    </div><section data-section="section" id="section-6o666" data-uid="section-6o666" class="" data-draggable="true">
+        <div data-section="wrap" data-reverse="true">
+            <div data-editable="button" id="edi-5ood8" data-uid="edi-5ood8" class="" data-draggable="true">
+                <a href="" title=""></a>
+                <button type="button">
+                <div style="color: #ff5400;">SUBSCRIBE NOW</div>
+              </button>
+            </div>
+            <div class="component-backdrop">
+            </div>
+            <div class="component-marker">
+            </div>
+            <div data-editable="multimedia:image" id="edi-ds3s3" data-uid="edi-ds3s3" class="" data-draggable="true" style="background: none;">
+                
+            <img src="https://multimedia.getresponse.com/getresponse-hOuSj/photos/651439805.png?_ga=2.241148165.724213828.1510522147-1581663021.1510522147" alt="" width="788" height="441" /></div>
+            <div data-editable="text" id="edi-33mmu" data-uid="edi-33mmu" class="" data-draggable="true">
+                <div class="text-content">
+                    <span style="font-family: Roboto, sans-serif;">
+        HBO NOW</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body><script type="text/javascript" src="http://emartinez12377_1.gr8.com/images/lps/js/lpc-show-typ.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ee0b9c04dc","applicationID":"57569376","transactionName":"NQQGNhBXV0BZVkJdDgxOJxcRQlZeF3hZUDITFAEHGFNpUl9QGWcJDRYwCgNYUmpXQBYZX0IVDAMMXWZKV0AYXBUPDQ==","queueTime":0,"applicationTime":175,"atts":"GUMFQFhNRE4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body></html>
